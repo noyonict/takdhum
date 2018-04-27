@@ -1,0 +1,70 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Contact {% endblock title %}
+
+{% block body %}
+<!--
+<section class="uv-map">
+    <div id="map">
+    </div>
+</section>
+-->
+<section class="uv-contact">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="col-md-9 col-sm-12 col-xs-12 content-widget">
+                <div class="col-xs-12 widget-title">
+                    <h4>Leave a Message</h4>
+                    <hr class="uv-hr">
+                </div>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                <form id="contactForm" class="single-form quate-form" data-toggle="validator" target="{% url 'user_message' %}" method="POST">
+                    {% csrf_token %}
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="col-md-4">
+                        <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                        <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                        <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <textarea class="contact-message form-control" id="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-fill">send message <i class="icon icons8-advance" id="form-submit"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12 content-widget uv-contact-details-1">
+                <div class="widget-title">
+                    <h4>Contact Details</h4>
+                    <hr class="uv-hr">
+                </div>
+                <div class="contact-list">
+                    <ul class="contact-details">
+                        <li><i class="fa fa-link"></i> <a href="{% url 'index' %}"> {{ info.name }}</a></li>
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:{{ info.email }}"> {{ info.email }}</a></li>
+                        <li><i class="fa fa-phone"></i> {{ info.phone_1 }}</li>
+                        {% if info.phone_2 %}
+                        <li><i class="fa fa-fax"></i> {{ info.phone_2 }}</li>
+                        {% endif %}
+                        <li><i class="fa fa-home"></i> {{ info.office_address }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}

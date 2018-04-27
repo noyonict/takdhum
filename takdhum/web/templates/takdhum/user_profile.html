@@ -1,0 +1,270 @@
+{% extends 'takdhum/html/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {{ title }} {% endblock title %}
+{% block body %}
+<section class="uv-subpage-heading image-bg" style="background-image: url({% static 'takdhum/assets/images/sub-banner.jpg' %});">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="uv-subhead-content col-xs-12">
+                    <h2>{{ user.username|title }} Profile </h2>
+                    <span>Welcome to Curricular university</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="uv-pagination">
+    <div class="container">
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="uv-profile">
+    <div class="container">
+        <div class="row section-separator">
+            <div class="col-sm-4 uv-sidebar uv-student-profile-sidebar">
+                <div class="uv-widget">
+                    <div class="uv-student-avatar">
+                        <figure>
+                            <img src="{% static 'takdhum/assets/images/student-1.png' %}" alt="">
+                        </figure>
+                    </div>
+                    <div class="uv-student-info">
+                        <h5>{{ user.username }}</h5>
+                        <p>STUDENT ID</p>
+                        <label>12345</label>
+                    </div>
+                    <div class="uv-student-infor-inner">
+                        <h6>Program</h6>
+                        <span>Bachelors of Science, Nursing</span>
+                        <h6>Semester</h6>
+                        <span>4th Semester</span>
+                    </div>
+                </div>
+
+                <div class="uv-widget no-side-padding">
+                    <div class="uv-student-nav">
+                        <ul>
+                            <li class="active"><a href="{% url 'profile' %}"><i class="fa fa-user-circle-o gt-color"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-bookmark"></i>My Courses</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i>Classes</a></li>
+                            <li><a href="#"><i class="fa fa-heart gt-color"></i>My Favorites</a></li>
+                            <li><a href="#"><i class="fa fa-gears"></i>Profile Setting</a></li>
+                            <li><a href="#"><i class="fa fa-lock"></i>Privacy Setting</a></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="uv-sudent-profile-info">
+                    <div class="uv-student-profile-details-header">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="uv-student-img">
+                                <img src="{% static 'takdhum/assets/images/s-1.jpg' %}" alt="" class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="uv-student-profile-inner">
+                                <ul>
+                                    <li>
+                                        <span>Name:</span>
+                                        <p>Anjela Doe</p>
+                                    </li>
+                                    <li>
+                                        <span>Father Name:</span>
+                                        <p>Doe Smith</p>
+                                    </li>
+                                    <li>
+                                        <span>Address:</span>
+                                        <p>Box 14 Becon Road Ney Jerys USA</p>
+                                    </li>
+                                    <li>
+                                        <span>Email Address:</span>
+                                        <p>anjelaadoe@noreply.com</p>
+                                    </li>
+                                    <li>
+                                        <span>Program:</span>
+                                        <p>Bachelors of Science, Nursing</p>
+                                    </li>
+                                    <li>
+                                        <span>Department:</span>
+                                        <p>School of Nursing</p>
+                                    </li>
+                                    <li>
+                                        <span>Student ID:</span>
+                                        <p>12345</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uv-student-overview">
+                        <h3>ABOUT ANJELA DOE</h3>
+                        <p><b>Phasellus vitae dapibus sapien. Vestibulum euismod arcu ac leo mattis, eget feugiat nisi venenatis.
+                        Integer porta, risus non laoreet congue, neque nisl efficitur velit, nec congue metus enim in ligula.
+                        Donec dignissim diam non mollis semper.</b></p>
+                        <p>Donec maximus metus quis massa malesuada sodales. Aenean a ullamcorper odio. Aenean ac orci vitae tellus aliquet tempus non sit amet dolor.
+                        Praesent pulvinar, leo vitae venenatis vehicula, magna ante maximus eros, a facilisis sem mi eu nulla. Phasellus id lobortis mi. Aenean semper
+                        dolor non viverra consequat. Sed in sapien odio. Integer ornare odio eros, in laoreet turpis maximus non.</p>
+                        <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit.
+                        Morbi aliquam orci nulla, ut pretium dolor accumsan id. Integer malesuada lorem magna, id facilisis mi efficitur vel. Morbi semper non lorem ac
+                        pretium. Phasellus in nulla nulla. Aliquam condimentum magna eu vehicula tincidunt. Aenean sit amet massa posuere, elementum neque ac, rutrum urna.
+                        Phasellus eget velit ut eros porta aliquet. Sed a tellus ex. Suspendisse cursus ante feugiat dapibus auctor. Donec vel vestibulum risus, sit amet laoreet est.
+                        Aenean lacinia, mi lobortis ultrices pulvinar, augue est convallis diam, ac condimentum erat enim et metus. Vivamus id mi ac nibh aliquam ornare. Duis lorem eros,
+                        egestas consectetur scelerisque sit amet, venenatis sed massa.</p>
+                    </div>
+                    <div class="uv-student-courses-overview">
+                        <h3>COURSES</h3>
+                        <ul>
+                            <li>
+                                <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="course-feature-img">
+                                        <img src="{% static 'takdhum/assets/images/courses-1.jpg' %}" alt="" class="img-responsive">
+                                        <span>Paid</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="uv-std-course-info">
+                                        <a href="#"><h6>Character Designer for 2D Animation</h6></a>
+                                        <div class="uv-std-course-review">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                            <span>View Course - Expires : 12 June 2018</span>
+                                        </div>
+                                        <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit. Morbi aliquam orci nulla</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="course-feature-img">
+                                        <img src="{% static 'takdhum/assets/images/javascript.png' %}" alt="" class="img-responsive">
+                                        <span>Free</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="uv-std-course-info">
+                                        <a href="#"><h6>Angular 2 Essential Training JavaScript</h6></a>
+                                        <div class="uv-std-course-review">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                            <span>View Course - Expires : 5 June 2018</span>
+                                        </div>
+                                        <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit. Morbi aliquam orci nulla</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="course-feature-img">
+                                            <img src="{% static 'takdhum/assets/images/e1.jpg' %}" alt="" class="img-responsive">
+                                            <span>Featured</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="uv-std-course-info">
+                                            <a href="#"><h6>Executive Leadership Training(Online)</h6></a>
+                                            <div class="uv-std-course-review">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                                <span>View Course - Expires : 22 August 2018</span>
+                                            </div>
+                                            <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit. Morbi aliquam orci nulla</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="course-feature-img">
+                                            <img src="{% static 'takdhum/assets/images/wordpress.jpg' %}" alt="" class="img-responsive">
+                                            <span>Paid</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="uv-std-course-info">
+                                            <a href="#"><h6>WordPress: Creating Custom Plugins with PHP</h6></a>
+                                            <div class="uv-std-course-review">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                                <span>View Course - Expires : 10 March 2018</span>
+                                            </div>
+                                            <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit. Morbi aliquam orci nulla</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="course-feature-img">
+                                            <img src="{% static 'takdhum/assets/images/ios_2.jpg' %}" alt="" class="img-responsive">
+                                            <span>Paid</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="uv-std-course-info">
+                                            <a href="#"><h6>IOS App Development</h6></a>
+                                            <div class="uv-std-course-review">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                                <span>View Course - Expires : 15 June 2018</span>
+                                            </div>
+                                            <p>Cras nec arcu quis libero semper tristique in at velit. Nunc volutpat mattis erat, vel varius dolor fringilla hendrerit. Morbi aliquam orci nulla</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block script %}
+<!-- init -->
+<script src="{% static "takdhum/assets/js/init.js" %}"></script>
+
+{% endblock script %}
